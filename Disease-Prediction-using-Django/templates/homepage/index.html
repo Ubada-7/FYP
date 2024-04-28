@@ -1,0 +1,496 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+	{% block head %}
+  <title> Health Guardian </title>
+  <link rel="shortcut icon" href="{% static 'homepage/favicon.png' %}" type="">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'homepage/css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="">
+  <style>
+    body {
+      background-color: #178066; /* Set your desired background color here */
+    }
+  </style>
+
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="jumbotron" style="background-color: #178066; padding: 20px;">
+  <section class="slider_section">
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="detail-box">
+                  <h1>We Provide Best Healthcare</h1>
+                  
+                  <p style="color: #fffff; font-family: 'Arial', sans-serif; text-align: justify;">Our website aims to revolutionize healthcare by harnessing the power of data science and medical expertise. With our innovative platform, users can consult experienced doctors remotely and receive accurate predictions about potential diseases or health conditions. Through advanced algorithms and machine learning models, we analyze symptoms, medical history, and various health parameters to provide personalized insights and recommendations. Our mission is to empower individuals to take proactive steps towards better health and well-being.</p>
+                  <div class="btn-box">
+                    <a href="" class="btn1">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="detail-box">
+                  <h1>We Provide Best Healthcare</h1>
+                  <p  style="color: #fffff; font-family: 'Helvetica', sans-serif; text-align: justify;">At our platform, we bridge the gap between patients and healthcare professionals, offering seamless access to expert medical advice and predictive diagnostics. With a focus on preventive healthcare, we utilize cutting-edge technology to identify health risks early on and empower individuals to make informed decisions about their well-being. Our team of dedicated doctors and data scientists work tirelessly to deliver personalized healthcare solutions tailored to each user's unique needs</p>
+                  <div class="btn-box">
+                    <a href="" class="btn1">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          
+        
+          <div class="container">
+            <div class="row">
+              
+              <div class="col-md-7">
+                
+                <div class="detail-box">
+                  
+                  <h1>We Provide Best Healthcare</h1>
+                  <p style="color: #fffff; font-family: 'Verdana', sans-serif; text-align: justify;">Join us on a journey towards proactive health management and disease prevention. Through our intuitive platform, users can connect with top-notch doctors from around the world, gain valuable insights into their health status, and receive proactive recommendations to optimize their lifestyle. By leveraging the latest advancements in artificial intelligence and medical research, we strive to make healthcare more accessible, efficient, and predictive for everyone</p>
+                  
+                  <div class="btn-box">
+                    
+                    <a href="" class="btn1">Read More</a>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          
+          </div>
+          
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+        <li data-target="#customCarousel1" data-slide-to="1"></li>
+        <li data-target="#customCarousel1" data-slide-to="2"></li>
+      </ol>
+      
+    </div>
+    
+  </section>
+  <!-- end slider section -->
+  
+</div>
+
+                
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      {% comment %} <p class="lead">
+      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+      </p>
+     {% endcomment %}
+
+</div>
+<div class="container mt-5 mb-3" style="width:fit-content;background-color: #178066; padding: 20px;">
+      <center>
+        <h1>Sign-In  As</h1>
+        </center>
+      
+      
+      <form>
+          <div class="container mt-5 mb-5">
+       <div class="row">
+          <div class="col">
+             <a href="{% url 'sign_in_admin' %}">
+      <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_doctor' %}">
+      <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_patient' %}">
+      <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+      </a>
+          </div>
+        </div>
+        </div>
+      </form>
+</div>
+
+
+    
+
+    {% endif %}
+
+<br><br>
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-In  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-Up  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br><br>
+<section class="doctor_section layout_padding" style="background-color: #178066; padding: 20px;">
+
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Our Doctors
+      </h2>
+      <p class="col-md-10 mx-auto px-0">
+        Incilint sapiente illo quo praesentium officiis laudantium nostrum, ad adipisci cupiditate sit, quisquam aliquid. Officiis laudantium fuga ad voluptas aspernatur error fugiat quos facilis saepe quas fugit, beatae id quisquam.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-lg-4 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'images/d1.jpg' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+            <h5>
+              Elina Josh
+            </h5>
+            <h6 class="">
+              Doctor
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'images/d2.jpg' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+            <h5>
+              Adam View
+            </h5>
+            <h6 class="">
+              Doctor
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'images/d3.jpg' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+            <h5>
+              Mia Mike
+            </h5>
+            <h6 class="">
+              Doctor
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <a href="">
+        View All
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- end doctor section -->
+        
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+    <!-- footer section -->
+  <footer class="footer_section" style="background-color: #fffff;">
+    <div class="container" style="background-color: #fffff;">
+      <div class="row" style="background-color: #fffff;">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="footer_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+              Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class="" href="index.html">
+                Home
+              </a>
+              <a class="" href="about.html">
+                About
+              </a>
+              <a class="" href="departments.html">
+                Departments
+              </a>
+              <a class="" href="doctors.html">
+                Doctors
+              </a>
+              <a class="active" href="contact.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col ">
+          <h4>
+            Newsletter
+          </h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Free Html Templates<br><br></a>
+            &copy; <span id="displayYear"></span> Distributed By
+            <a href="https://themewagon.com/">ThemeWagon</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}
