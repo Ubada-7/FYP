@@ -57,7 +57,12 @@ class doctor(models.Model):
     rating = models.IntegerField(default=0)
 
 
-
+class Appointment(models.Model):
+    doctor = models.ForeignKey(doctor, on_delete=models.CASCADE)
+    patient = models.ForeignKey(patient, on_delete=models.CASCADE)
+    appointment_date = models.DateTimeField()
+    status = models.CharField(max_length=10, choices=[('Pending', 'Pending'), ('Approved', 'Approved'), ('Adjusted', 'Adjusted'), ('Rejected', 'Rejected')])
+    notes = models.TextField(null=True, blank=True)
 
 
 class diseaseinfo(models.Model):
